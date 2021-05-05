@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg"
+    tools:context=".AdicionarEncomenda">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/warehouse1" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Storage"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginTop="200dp"
+            android:text="Nome da Encomenda:"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <EditText
+            android:id="@+id/nomeEncomenda"
+            android:fontFamily="@font/exoreg"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="240dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="22sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginTop="320dp"
+            android:text="Código de rastreio:"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <EditText
+            android:id="@+id/codigoRastreio"
+            android:fontFamily="@font/exoreg"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="360dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="22sp"/>
+
+        <Button
+            android:id="@+id/addEncomenda"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="430dp"
+            android:text="Adicionar encomenda"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+        <Button
+            android:id="@+id/inicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="voltar ao início"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="580dp"
+            android:fontFamily="@font/exoreg"
+            style="@style/Widget.AppCompat.Button.Small"
+            app:backgroundTint="#1380B1"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

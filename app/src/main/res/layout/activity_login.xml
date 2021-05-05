@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Login">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/warehouse1" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Storage"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="260dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#00000000"
+            android:textSize="38dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="360dp"
+            android:drawableLeft="@drawable/ic_action_login"
+            android:ems="13"
+            android:hint="E-mail"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="420dp"
+            android:ems="13"
+            android:hint="Senha"
+            android:drawableLeft="@drawable/ic_action_senha"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnNovaConta"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="235dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="525dp"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/exoreg"
+            android:text="Não possui uma conta? Clique aqui"
+            android:textColor="@android:color/black"
+            android:textSize="11sp"
+            app:backgroundTint="@color/cardview_shadow_end_color" />
+
+        <TextView
+            android:id="@+id/esqueciSenha"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="235dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="545dp"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/exoreg"
+            android:text="Esqueci minha senha"
+            android:textColor="@android:color/black"
+            android:textSize="11sp"
+            app:backgroundTint="@color/cardview_shadow_end_color" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="600dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="480dp"
+            android:text="Login"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "441797302381",
+    "project_id": "smartstorageapp-26984",
+    "storage_bucket": "smartstorageapp-26984.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441797302381:android:1449ed76462078fb9e4764",
+        "android_client_info": {
+          "package_name": "com.example.smartstorageapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441797302381-tjdvcqft0rvrbcf2f09b0sq5l7gblink.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNLzRrEuOCcfNPK28OggbsEbnrAHCnQjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441797302381-tjdvcqft0rvrbcf2f09b0sq5l7gblink.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

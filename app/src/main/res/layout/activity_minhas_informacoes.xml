@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg"
+    tools:context=".MinhasInformacoes">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/warehouse1" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Storage"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minhas Informações"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:textSize="32sp"
+            />
+
+        <TextView
+            android:id="@+id/nomeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nome"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/emailInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="280dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/celularInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="celular"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="350dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/cpfInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cpf"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="240dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="350dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/aptoInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="apartamento"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="420dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/blocoInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bloco"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="240dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="420dp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/inicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="voltar ao início"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="580dp"
+            android:fontFamily="@font/exoreg"
+            style="@style/Widget.AppCompat.Button.Small"
+            app:backgroundTint="#1380B1"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

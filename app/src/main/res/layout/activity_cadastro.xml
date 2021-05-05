@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg"
+    tools:context=".Cadastro">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/warehouse1" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Storage"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novo Cadastro"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:textSize="32sp"
+            />
+
+        <TextView
+            android:id="@+id/tituloNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:text="Nome completo:" />
+
+        <EditText
+            android:id="@+id/nome"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="195dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/tituloCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Celular:"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="240dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/exoreg"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/celular"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="255dp"
+            android:layout_marginRight="20dp"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/tituloCPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16dp"
+            android:text="CPF:"
+            />
+
+        <EditText
+            android:id="@+id/cpf"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="255dp"
+            android:layout_marginRight="20dp"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/tituloApto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:text="N° do Apartamento:"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16dp"
+            />
+
+        <EditText
+            android:id="@+id/apto"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="315dp"
+            android:layout_marginRight="20dp"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            />
+
+        <TextView
+            android:id="@+id/tituloBloco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="@color/black"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16dp"
+            android:text="Bloco:"
+            />
+
+        <EditText
+            android:id="@+id/bloco"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="315dp"
+            android:layout_marginRight="20dp"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            />
+
+        <TextView
+            android:id="@+id/tituloEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="#000000"
+            android:textColorHighlight="#00000000"
+            android:layout_marginTop="360dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:text="E-mail:"
+            />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="1600dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="380dp"
+            android:layout_marginRight="20dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tituloSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="#000000"
+            android:textColorHighlight="#00000000"
+            android:layout_marginTop="430dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:text="Senha:"
+            />
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="1600dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="445dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tituloConfSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exoreg"
+            android:textColor="#000000"
+            android:textColorHighlight="#00000000"
+            android:layout_marginTop="495dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:text="Confirmar senha:"
+            />
+
+        <EditText
+            android:id="@+id/confSenha"
+            android:layout_width="1600dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/finalCadastro"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="580dp"
+            android:text="Finalizar cadastro"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+        <Button
+            android:id="@+id/btnJapossui"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="235dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="625dp"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/exoreg"
+            android:text="Já possui uma conta? Clique aqui."
+            android:textColor="@android:color/black"
+            android:textSize="11sp"
+            app:backgroundTint="@color/cardview_shadow_end_color"  />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="665dp"
+            android:visibility="invisible" />
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

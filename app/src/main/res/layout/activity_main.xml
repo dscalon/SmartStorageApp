@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/warehouse1" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Storage"
+            android:fontFamily="@font/exoreg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+        <Button
+            android:id="@+id/btnEncomenda"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp"
+            android:text="minhas encomendas"
+            android:textSize="15sp"
+            app:backgroundTint="#1380B1" />
+
+        <Button
+            android:id="@+id/btnAddEncomenda"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="310dp"
+            android:onClick="logout"
+            android:text="adicionar encomenda"
+            android:textSize="15sp"
+            app:backgroundTint="#1380B1" />
+
+        <Button
+            android:id="@+id/btnInfos"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="380dp"
+            android:onClick="logout"
+            android:text="minhas informações"
+            android:textSize="15sp"
+            app:backgroundTint="#1380B1" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="450dp"
+            android:onClick="logout"
+            android:text="sair"
+            android:textSize="15sp"
+            app:backgroundTint="#1380B1" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
