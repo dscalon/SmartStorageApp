@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -13,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -28,25 +30,43 @@ public class MinhasEncomendas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minhas_encomendas);
+        pegarEncomendas();
+    }
 
+    private void pegarEncomendas() {
         /** Implementação da conexão com o servidor usando a biblioteca Volley **/
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this); //Criar nova  fila de requisições
-            String URL = "http://192.168.25.9:5000/test"; //URL do servidor
+            String URL = "http://10.0.2.2:5000/dados"; //URL do servidor - ver qual rota Carlos vai dar pra gente
 
             /**Criação do JSON que será enviado na requisição**/
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("usuario", "Das");
-            jsonBody.put("apartamento", "123");
-            final String requestBody = jsonBody.toString();
+            jsonBody.put("usuario", "usuarioatual"); //vai precisar ser o nome do usuário
 
             /**Criaçao e definição do tipo de Request*/
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            JsonObjectRequest myRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {
 
-                /**Definição dos handlers para resposta e erro**/
+                /**
+                 * Definição dos handlers para resposta e erro
+                 **/
                 @Override
-                public void onResponse(String response) {
-                    Log.i("VOLLEY", response);
+                public void onResponse(JSONObject response) {
+                    try {
+
+                        //for (int i = 0; i < jsonArray.length(); i++) {
+                        //JSONObject user = jsonArray.getJSONObject(i);
+                        System.out.println(response.toString());
+                        JSONObject user = response.getJSONObject("informações de entrega");
+                        String name = user.get("nome").toString();
+                        String endereco = user.get("endereco").toString();
+                        String bloco = user.get("bloco").toString();
+                        StringBuilder result = new StringBuilder();
+                        result.append(name + ", " + endereco + ", " + bloco + "\n\n");
+                        System.out.println(result.toString());
+                    } catch (JSONException jsonException) {
+                        jsonException.printStackTrace();
+                    }
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -54,35 +74,25 @@ public class MinhasEncomendas extends AppCompatActivity {
                     Log.e("VOLLEY", error.toString());
                 }
             }) {
-                /**Definição do tipo de resposta**/
+                /**
+                 * Definição do tipo de resposta
+                 **/
                 @Override
                 public String getBodyContentType() {
                     return "application/json; charset=utf-8";
                 }
-
-                @Override
-                public byte[] getBody() throws AuthFailureError {
-                    try {
-                        return requestBody == null ? null : requestBody.getBytes("utf-8");
-                    } catch (UnsupportedEncodingException uee) {
-                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
-                        return null;
-                    }
-                }
-                /**Pegar a resposta**/
-                @Override
-                protected Response<String> parseNetworkResponse(NetworkResponse response) {
-                    String responseString = "";
-                    if (response != null) {
-                        responseString = String.valueOf(response.statusCode);
-                        // can get more details such as response.headers
-                    }
-                    return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
-                }
             };
             /**Adicionar a requisição na fila do Volley**/
-            requestQueue.add(stringRequest);
-        } catch (JSONException e) {
+
+            myRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    10000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+            requestQueue.add(myRequest);
+
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

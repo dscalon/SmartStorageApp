@@ -13,18 +13,15 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.common.util.NumberUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -32,11 +29,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -195,17 +193,20 @@ public class Cadastro extends AppCompatActivity {
             jsonBody.put("endereco", "Rua tal");
             jsonBody.put("bloco", mBloco.getText().toString());
             jsonBody.put("ap", mApto.getText().toString());
-            final String requestBody = jsonBody.toString();
+            //final String requestBody = jsonBody.toString();
 
             /**Criaçao e definição do tipo de Request*/
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-
+            JsonObjectRequest myRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {
                 /**
                  * Definição dos handlers para resposta e erro
                  **/
                 @Override
-                public void onResponse(String response) {
-                    Log.i("VOLLEY", response);
+                public void onResponse(JSONObject response) {
+
+                    //for (int i = 0; i < jsonArray.length(); i++) {
+                    //JSONObject user = jsonArray.getJSONObject(i);
+                    System.out.println(response.toString());
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -220,40 +221,18 @@ public class Cadastro extends AppCompatActivity {
                 public String getBodyContentType() {
                     return "application/json; charset=utf-8";
                 }
-
-                @Override
-                public byte[] getBody() throws AuthFailureError {
-                    try {
-                        return requestBody == null ? null : requestBody.getBytes("utf-8");
-                    } catch (UnsupportedEncodingException uee) {
-                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
-                        return null;
-                    }
-                }
-
-                /**
-                 * Pegar a resposta
-                 **/
-                @Override
-                protected Response<String> parseNetworkResponse(NetworkResponse response) {
-                    String responseString = "";
-                    if (response != null) {
-                        responseString += String.valueOf(response.statusCode);
-                        responseString += String.valueOf(response.data.toString());
-                        // can get more details such as response.headers
-                    }
-                    return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
-                }
             };
             /**Adicionar a requisição na fila do Volley**/
 
-            stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+            myRequest.setRetryPolicy(new DefaultRetryPolicy(
                     10000,
                     DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                     DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-            requestQueue.add(stringRequest);
-        } catch (JSONException e) {
+            requestQueue.add(myRequest);
+
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
 
