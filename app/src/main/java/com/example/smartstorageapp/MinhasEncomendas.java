@@ -37,11 +37,19 @@ public class MinhasEncomendas extends AppCompatActivity {
         /** Implementação da conexão com o servidor usando a biblioteca Volley **/
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this); //Criar nova  fila de requisições
-            String URL = "http://10.0.2.2:5000/dados"; //URL do servidor - ver qual rota Carlos vai dar pra gente
+            String URL = "http://10.0.2.2:5000/compras"; //URL do servidor - ver qual rota Carlos vai dar pra gente
 
             /**Criação do JSON que será enviado na requisição**/
-            JSONObject jsonBody = new JSONObject();
-            jsonBody.put("usuario", "usuarioatual"); //vai precisar ser o nome do usuário
+            JSONObject jsonBody;
+            if(Login.getUserID() != null){
+                jsonBody = new JSONObject();
+                jsonBody.put("nome", Login.getUserID()); //vai precisar ser o nome do usuário
+            } else {
+                jsonBody = new JSONObject();
+                jsonBody.put("nome", Cadastro.getmNome()); //vai precisar ser o nome do usuário
+            }
+
+
 
             /**Criaçao e definição do tipo de Request*/
             JsonObjectRequest myRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {
@@ -53,16 +61,10 @@ public class MinhasEncomendas extends AppCompatActivity {
                 public void onResponse(JSONObject response) {
                     try {
 
-                        //for (int i = 0; i < jsonArray.length(); i++) {
-                        //JSONObject user = jsonArray.getJSONObject(i);
                         System.out.println(response.toString());
-                        JSONObject user = response.getJSONObject("informações de entrega");
-                        String name = user.get("nome").toString();
-                        String endereco = user.get("endereco").toString();
-                        String bloco = user.get("bloco").toString();
-                        StringBuilder result = new StringBuilder();
-                        result.append(name + ", " + endereco + ", " + bloco + "\n\n");
-                        System.out.println(result.toString());
+                        int encomendas = response.getInt("Quantidade de produtos"); //Descobrir nome do json
+                        ///String posicao = response.getString("posicao");
+                        System.out.println(encomendas);
                     } catch (JSONException jsonException) {
                         jsonException.printStackTrace();
                     }

@@ -41,7 +41,19 @@ import java.util.Map;
 public class Cadastro extends AppCompatActivity {
 
     Button finalizaCadastro, jaPossui;
-    EditText mSenha, mConfSenha, mNome, mEmail, mCelular, mCPF, mApto, mBloco;
+    EditText mSenha;
+    EditText mConfSenha;
+
+    public static String getmNome() {
+        return mNome.getText().toString();
+    }
+
+    public static EditText mNome;
+    EditText mEmail;
+    EditText mCelular;
+    EditText mCPF;
+    EditText mApto;
+    EditText mBloco;
     String userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
