@@ -3,6 +3,7 @@ package com.example.smartstorageapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,7 +24,7 @@ import java.util.Map;
 
 public class AdicionarEncomenda extends AppCompatActivity {
 
-    Button addEncomenda;
+    Button addEncomenda, inicio;
     EditText codigoRastreio, nomeEncomenda;
     String userID;
     FirebaseAuth fAuth;
@@ -41,12 +42,18 @@ public class AdicionarEncomenda extends AppCompatActivity {
         codigoRastreio = findViewById(R.id.codigoRastreio);
         nomeEncomenda = findViewById(R.id.nomeEncomenda);
         addEncomenda = findViewById(R.id.addEncomenda);
+        inicio = findViewById(R.id.inicioInfo);
 
 
         fStore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
 
-
+        inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
 
 /*

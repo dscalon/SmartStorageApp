@@ -114,8 +114,8 @@ public class Cadastro extends AppCompatActivity {
                     mCelular.setError("Informe o celular corretamente.");
                     return;
                 }
-                if(celular.length() < 12){
-                    mCelular.setError("Insira o celular no formato: (DDD)X XXXX-XXXX");
+                if(celular.length() < 9){
+                    mCelular.setError("Insira o celular no formato: DDD X XXXXXXXX");
                     return;
                 }
                 if(TextUtils.isEmpty(cpf)){
