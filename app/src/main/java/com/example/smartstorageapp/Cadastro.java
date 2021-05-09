@@ -54,6 +54,8 @@ public class Cadastro extends AppCompatActivity {
     EditText mCPF;
     EditText mApto;
     EditText mBloco;
+    EditText mRua;
+    EditText mNumero;
     String userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -74,6 +76,8 @@ public class Cadastro extends AppCompatActivity {
         mCPF = findViewById(R.id.cpf);
         mApto = findViewById(R.id.apto);
         mBloco = findViewById(R.id.bloco);
+        mRua = findViewById(R.id.rua);
+        mNumero = findViewById(R.id.numeroPredio);
         finalizaCadastro = findViewById(R.id.finalCadastro);
         jaPossui = findViewById(R.id.btnJapossui);
 
@@ -105,6 +109,9 @@ public class Cadastro extends AppCompatActivity {
                 String cpf = mCPF.getText().toString();
                 String apto = mApto.getText().toString();
                 String bloco = mBloco.getText().toString();
+                String rua = mRua.getText().toString();
+                String numero = mNumero.getText().toString();
+
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Insira um E-mail válido.");
@@ -145,6 +152,12 @@ public class Cadastro extends AppCompatActivity {
                 if(TextUtils.isEmpty(bloco)){
                     mBloco.setError("Informe o bloco.");
                 }
+                if(TextUtils.isEmpty(rua)){
+                    mRua.setError("Informe a rua.");
+                }
+                if(TextUtils.isEmpty(numero)){
+                    mNumero.setError("Informe o número do prédio.");
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -169,6 +182,8 @@ public class Cadastro extends AppCompatActivity {
                             usuario.put("cpf", cpf);
                             usuario.put("apto", apto);
                             usuario.put("bloco", bloco);
+                            usuario.put("rua", rua);
+                            usuario.put("numero", numero);
                             documentReference.set(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -198,14 +213,21 @@ public class Cadastro extends AppCompatActivity {
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this); //Criar nova  fila de requisições
             String URL = "http://10.0.2.2:5000/dados"; //URL do servidor
+            StringBuilder sb = new StringBuilder();
+            sb.append(mRua.getText().toString());
+            sb.append(", ");
+            sb.append(mNumero.getText().toString());
+            sb.append(", Apto ");
+            sb.append(mApto.getText().toString());
+            sb.append(", Bloco ");
+            sb.append(mBloco.getText().toString());
 
             /**Criação do JSON que será enviado na requisição**/
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("nome", mNome.getText().toString());
-            jsonBody.put("endereco", "Rua tal");
+            jsonBody.put("endereco", sb.toString());
             jsonBody.put("bloco", mBloco.getText().toString());
             jsonBody.put("ap", mApto.getText().toString());
-            //final String requestBody = jsonBody.toString();
 
             /**Criaçao e definição do tipo de Request*/
             JsonObjectRequest myRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {

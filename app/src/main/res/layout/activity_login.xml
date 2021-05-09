@@ -65,7 +65,7 @@
         <Button
             android:id="@+id/btnNovaConta"
             style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-            android:layout_width="235dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="525dp"
@@ -79,10 +79,10 @@
         <TextView
             android:id="@+id/esqueciSenha"
             style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-            android:layout_width="235dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="545dp"
+            android:layout_marginTop="565dp"
             android:background="#FFFFFF"
             android:fontFamily="@font/exoreg"
             android:text="Esqueci minha senha"
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="640dp"
             android:visibility="invisible" />
 
         <Button

@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MinhasInformacoes extends AppCompatActivity {
-    TextView nome, email, celular, cpf, apto, bloco;
+    TextView nome, email, celular, cpf, apto, bloco, rua, numero;
     Button inicio;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -35,6 +35,8 @@ public class MinhasInformacoes extends AppCompatActivity {
         apto = findViewById(R.id.aptoInfo);
         bloco = findViewById(R.id.blocoInfo);
         inicio = findViewById(R.id.inicioInfo);
+        rua = findViewById(R.id.ruaInfo);
+        numero = findViewById(R.id.numeroInfo);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -59,6 +61,8 @@ public class MinhasInformacoes extends AppCompatActivity {
                 cpf.setText(documentSnapshot.getString("cpf"));
                 apto.setText(documentSnapshot.getString("apto"));
                 bloco.setText(documentSnapshot.getString("bloco"));
+                rua.setText(documentSnapshot.getString("rua"));
+                numero.setText(documentSnapshot.getString("numero"));
             }
         });
 

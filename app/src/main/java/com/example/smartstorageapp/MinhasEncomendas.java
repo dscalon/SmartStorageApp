@@ -26,6 +26,8 @@ import java.io.UnsupportedEncodingException;
 
 public class MinhasEncomendas extends AppCompatActivity {
 
+    String[] Posicoes; //Vetor de strings para vc colocar na tela
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +65,15 @@ public class MinhasEncomendas extends AppCompatActivity {
 
                         System.out.println(response.toString());
                         int encomendas = response.getInt("Quantidade de produtos"); //Descobrir nome do json
-                        ///String posicao = response.getString("posicao");
+                        String posicao = response.getString("Slots");
+
+                        if(posicao != null){
+                            posicao = posicao.substring(posicao.indexOf("["), posicao.lastIndexOf("]"));
+                            Posicoes = posicao.split(",");
+                        }
+
                         System.out.println(encomendas);
+                        System.out.println(posicao);
                     } catch (JSONException jsonException) {
                         jsonException.printStackTrace();
                     }

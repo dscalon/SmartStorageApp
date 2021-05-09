@@ -75,7 +75,7 @@
             android:fontFamily="@font/exoreg"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="340dp"
             android:textColor="@color/black"
             />
 
@@ -88,7 +88,33 @@
             android:fontFamily="@font/exoreg"
             android:layout_marginLeft="240dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="340dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/ruaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rua"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="410dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/numeroInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="número"
+            android:textSize="22sp"
+            android:fontFamily="@font/exoreg"
+            android:layout_marginLeft="240dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="410dp"
             android:textColor="@color/black"
             />
 
@@ -101,7 +127,7 @@
             android:fontFamily="@font/exoreg"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="480dp"
             android:textColor="@color/black"
             />
 
@@ -114,7 +140,7 @@
             android:fontFamily="@font/exoreg"
             android:layout_marginLeft="240dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="480dp"
             android:textColor="@color/black"
             />
 
