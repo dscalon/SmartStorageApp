@@ -31,8 +31,130 @@
             android:textColor="@color/black"
             android:textSize="18dp" />
 
+        <EditText
+            android:id="@+id/box1"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnBox1"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="150dp"
+            android:text="Retirar Encomenda"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1"
+            android:visibility="invisible"
+            />
+
+        <EditText
+            android:id="@+id/box2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/btnBox2"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="250dp"
+            android:text="Retirar Encomenda"
+            android:fontFamily="@font/exoreg"
+            android:visibility="invisible"
+            app:backgroundTint="#1380B1" />
 
 
+        <EditText
+            android:id="@+id/box3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/btnBox3"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="350dp"
+            android:text="Retirar Encomenda"
+            android:visibility="invisible"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+        <EditText
+            android:id="@+id/box4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/btnBox4"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="450dp"
+            android:visibility="invisible"
+            android:text="Retirar Encomenda"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+        <EditText
+            android:id="@+id/box5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="550dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/btnBox5"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="550dp"
+            android:visibility="invisible"
+            android:text="Retirar Encomenda"
+            android:fontFamily="@font/exoreg"
+            app:backgroundTint="#1380B1" />
+
+
+        <Button
+            android:id="@+id/inicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="voltar ao início"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="630dp"
+            android:fontFamily="@font/exoreg"
+            style="@style/Widget.AppCompat.Button.Small"
+            app:backgroundTint="#1380B1"/>
 
 
 

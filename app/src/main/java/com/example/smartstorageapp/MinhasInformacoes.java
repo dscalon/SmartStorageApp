@@ -17,11 +17,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MinhasInformacoes extends AppCompatActivity {
-    TextView nome, email, celular, cpf, apto, bloco, rua, numero;
+
+
+    public static TextView nome;
+    TextView email, celular, cpf, apto, bloco, rua, numero;
     Button inicio;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+
+    public static String getNome() {
+        return nome.getText().toString();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

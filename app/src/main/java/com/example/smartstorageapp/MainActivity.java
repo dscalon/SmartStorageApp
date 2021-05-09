@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button encomendas, adicionar, infos;
+    Button encomendas, infos;
 
 
     @Override
@@ -37,14 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        adicionar = findViewById(R.id.btnAddEncomenda);
 
-        adicionar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdicionarEncomenda.class));
-            }
-        });
 
 
 
